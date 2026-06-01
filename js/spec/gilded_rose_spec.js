@@ -54,4 +54,13 @@ describe("Gilded Rose", function () {
     expect(items[0].sell_in).toBe(14);
     expect(items[0].quality).toBe(21);
   });
+
+  it("increases Backstage pass quality by 2 when 10 days or less remain", function () {
+    items.push(new Item("Backstage passes to a TAFKAL80ETC concert", 10, 20));
+
+    update_quality();
+
+    expect(items[0].sell_in).toBe(9);
+    expect(items[0].quality).toBe(22);
+  });
 });
