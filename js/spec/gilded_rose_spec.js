@@ -81,4 +81,13 @@ describe("Gilded Rose", function () {
     expect(items[0].sell_in).toBe(-1);
     expect(items[0].quality).toBe(0);
   });
+
+  it("decreases normal item quality twice as fast after sell date", function () {
+    items.push(new Item("Normal Item", 0, 20));
+
+    update_quality();
+
+    expect(items[0].sell_in).toBe(-1);
+    expect(items[0].quality).toBe(18);
+  });
 });
