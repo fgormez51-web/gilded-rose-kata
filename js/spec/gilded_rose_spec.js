@@ -1,9 +1,14 @@
-describe("Gilded Rose", function() {
-
-  it("should foo", function() {
-    items = [ new Item("foo", 0, 0) ];
-    update_quality();
-    expect(items[0].name).toEqual("fixme");
+describe("Gilded Rose", function () {
+  beforeEach(function () {
+    items = [];
   });
 
+  it("decreases sell_in and quality for a normal item", function () {
+    items.push(new Item("Normal Item", 10, 20));
+
+    update_quality();
+
+    expect(items[0].sell_in).toBe(9);
+    expect(items[0].quality).toBe(19);
+  });
 });
