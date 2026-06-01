@@ -19,4 +19,13 @@ describe("Gilded Rose", function () {
 
     expect(items[0].quality).toBe(0);
   });
+
+  it("increases quality for Aged Brie", function () {
+    items.push(new Item("Aged Brie", 2, 0));
+
+    update_quality();
+
+    expect(items[0].sell_in).toBe(1);
+    expect(items[0].quality).toBe(1);
+  });
 });
